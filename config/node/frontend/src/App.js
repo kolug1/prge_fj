@@ -1,4 +1,3 @@
-import Home from "./pages/Home";
 import "./styles/style.scss";
 
 import {Suspense} from "react";
