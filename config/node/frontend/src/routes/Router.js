@@ -4,23 +4,23 @@ import {Home, About, Map, ListOfItems, Services} from './LazyImports';
 const routes = createBrowserRouter(
     [
         {
-            path: '/',
+            path: '/prge_fj/',
             element: <Home/>
         },
         {
-            path: '/about',
+            path: '/prge_fj/about',
             element: <About/>
         },
         {
-            path: '/map',
+            path: '/prge_fj/map',
             element: <Map/>
         },
         {
-            path: '/services',
+            path: '/prge_fj/services',
             element: <Services/>
         },
         {
-            path: '/list',
+            path: '/prge_fj/list',
             element: <ListOfItems/>
         },
         {
