@@ -1,0 +1,19 @@
+services:
+  postgis:
+    build:
+      context: ..
+      dockerfile: docker/postgis/Dockerfile
+    image: "prge_postgis"
+    container_name: "prge_postgis"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5444:5432
+    volumes:
+      - postgis-local-data:/var/lib/postgresql/data
+
+
+volumes:
+    postgis-local-data:
