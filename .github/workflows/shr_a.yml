@@ -19,4 +19,16 @@ jobs:
 
       - name: Print
         run: echo "Witaj"
+
+
+
+      - name: Uruchom środowisko docker-compose
+        env:
+          POSTGRES_DB: ${{sercrets.POSTGRES_DB}}
+          POSTGRES_USER: ${{sercrets.POSTGRES_USER}}
+          POSTGRES_PASSWORD: ${{sercrets.POSTGRES_PASSWORD}}
+
+        run: |
+          docker-compose -f ./docker-compose/docker-compose-prge-local.yml --env-file .env -p local-prge up --build -d
+
       
