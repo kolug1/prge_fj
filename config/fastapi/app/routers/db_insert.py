@@ -17,13 +17,19 @@ async def insert_user():
     try:
         db_connection = connect_to_db(db_name=db_name, db_user=db_user, db_password=db_password)
 
+        params = {
+            "name": "Asia",
+            "posts": 4,
+            "location": "Warszawa"
+        }
+
         sql_query = text("""
                          insert into users (name, posts, location)
-                         values ('Jan', 3, 'Gdańsk'); \
+                         values (:name, :posts, :location); \
                          """)
 
         with db_connection.connect() as conn:
-            result = conn.execute(sql_query)
+            result = conn.execute(sql_query, params)
             conn.commit()
             print(result)
 

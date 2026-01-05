@@ -3,11 +3,6 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-
-@router.get("/aa")
-async def aa():
-    return [
-        {"Imię": "Adrian"},
-        {"Imię": "Mateusz"},
-        {"Imię": "Bassam"},
-    ]
+@router.get("/endpoint")
+async def enpoint():
+    return {"id": 1, "firstName": "Emily"}
