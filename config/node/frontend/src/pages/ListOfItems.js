@@ -5,7 +5,12 @@ function ListOfItems(props) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     console.log("działa");
-    fetch("http://localhost:10000/app/get_users")
+    fetch("/app/get_users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
