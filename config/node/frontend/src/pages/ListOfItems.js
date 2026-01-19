@@ -19,7 +19,7 @@ function ListOfItems(props) {
   }, []);
   useEffect(() => {
     console.log("Stan users zaktualizowany:", users);
-  }, []);
+  }, [users]);
 
   console.log("To jest users i jego zawartość", users.data);
   return (
