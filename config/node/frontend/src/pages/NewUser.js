@@ -62,7 +62,7 @@ function NewUser(props) {
                         <TextField
                             className="newuser__input"
                             fullWidth
-                            label="Liczba postów"
+                            label="Wiek"
                             type="number"
                             variant="outlined"
                             value={userPosts}
