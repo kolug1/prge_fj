@@ -1,23 +1,311 @@
-.app{
-  background: $background-color;
-  color: $secondary-color;
-  height: 100vh;
-  font-family: "lato";
 
-
-  @include flex-center;
-
-  .home__button {
-    width: fit-content;
-    margin-top: 2vh;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'lato', sans-serif;
 }
 
 
+.home-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #E6E6E6;
+  align-items: center;
+  justify-content: center;
+}
 
+.home {
+  &__image-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
 
+    .home__illustration {
+      max-width: 100%;
+      height: auto;
+      width: 400px;
+    }
+  }
 
-.mapComponent{
+  &__content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 50px;
+  }
+
+  &__text-wrapper {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    color: #5E3045 !important;
+    font-weight: bold !important;
+    letter-spacing: 1px !important;
+    line-height: 1 !important;
+  }
+
+  &__subtitle {
+    color: #FFFFFF !important;
+    text-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+    font-weight: 400 !important;
+    letter-spacing: 1px !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+  .home__image-section {
+    justify-content: center;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  .home__content-section {
+    align-items: center;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+// =========================================
+// SERVICES
+// =========================================
+
+.services-container {
+  min-height: 100vh;
+  background-color: #E6E6E6;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+  padding-top: 20px;
+}
+
+.services__title-wrapper {
+  text-align: center;
+}
+
+.services__title {
+  color: #5E3045 !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  letter-spacing: 4px !important;
+  line-height: 1.2 !important;
+}
+
+.service-card {
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  border-radius: 4px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__image-container {
+    height: 180px;
+    width: 100%;
+    position: relative;
+    background-color: #ccc;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__icon-overlay {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__desc {
+    font-size: 0.95rem !important;
+    color: #444;
+    margin-bottom: 25px !important;
+    line-height: 1.5 !important;
+  }
+
+  &__btn {
+    background-color: #5E3045 !important;
+    color: white !important;
+    width: 100%;
+    padding: 12px 0 !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    font-size: 0.9rem !important;
+    border-radius: 4px !important;
+
+    &:hover {
+      background-color: #4a2536 !important;
+    }
+  }
+}
+.mapComponent {
   height: 100vh;
   width: 100vw;
+}
+// =========================================
+// LISTY OBIEKTOW
+// =========================================
+
+.list-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #E6E6E6;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  max-width: 1000px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list__title {
+  color: #5E3045 !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  letter-spacing: 2px !important;
+  text-align: center;
+}
+
+.list__content {
+  padding-bottom: 60px;
+}
+
+.list__card-wrapper {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(94, 48, 69, 0.15);
+    border-left: 5px solid #5E3045;
+  }
+
+  .MuiCardHeader-root, .MuiCardContent-root, div {
+     font-family: 'lato', sans-serif;
+  }
+}
+
+// =========================================
+// EW USER
+// =========================================
+
+.newuser-container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #E6E6E6;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.newuser__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.newuser__title {
+  color: #5E3045 !important;
+  font-weight: bold !important;
+  text-transform: uppercase;
+  letter-spacing: 2px !important;
+  text-align: center;
+}
+
+.newuser__card {
+  padding: 40px;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.newuser__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.newuser__input {
+  background-color: #fafafa;
+
+  & .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #5E3045 !important;
+  }
+
+  & .MuiInputLabel-root.Mui-focused {
+    color: #5E3045 !important;
+  }
+}
+
+// Przycisk
+.newuser__btn {
+  background-color: #5E3045 !important;
+  color: white !important;
+  padding: 12px 0 !important;
+  font-weight: bold !important;
+  font-size: 1rem !important;
+  margin-top: 10px !important;
+
+  &:hover {
+    background-color: #4a2536 !important;
+  }
 }

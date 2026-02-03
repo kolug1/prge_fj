@@ -22,7 +22,7 @@ function MapComponent(props) {
 
                     new TileLayer({
                         source: new TileWMS( {
-                            url: 'http://localhost:9000/geoserver/ne/wms?',
+                            url: 'http://192.168.0.150:9000/geoserver/ne/wms?',
                             params: {
                                 'layers': 'ne:countries',
                                 'TILED': true
@@ -33,7 +33,7 @@ function MapComponent(props) {
                     }),
                     new TileLayer({
                         source: new TileWMS( {
-                            url: 'http://localhost:9000/geoserver/prge/wms?',
+                            url: 'http://192.168.0.150:9000/geoserver/prge/wms?',
                             params: {
                                 'layers': 'prge:PL.PZGiK.330.BDOT10k.1406__OT_SWRS_L',
                                 'TILED': true
@@ -44,7 +44,7 @@ function MapComponent(props) {
                     }),
                     new TileLayer({
                         source: new TileWMS( {
-                            url: 'http://localhost:9000/geoserver/prge/wms?',
+                            url: 'http://192.168.0.150:9000/geoserver/prge/wms?',
                             params: {
                                 'layers': 'prge:users',
                                 'TILED': true
